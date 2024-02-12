@@ -77,7 +77,7 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
             request.setEntity(params);
             HttpResponse response = httpClient.execute(request);
         } catch (Exception ex) {
-            // handle exception here
+            ex.printStackTrace();
         } finally {
             httpClient.close();
         }
