@@ -68,8 +68,8 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
     }
 
     private void sendTestResult(String result) throws IOException {
+        System.out.println("HERE");
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-
         try {
             HttpPost request = new HttpPost("http://localhost:5001/nextgen/taskLog/saveJavaTasks");
             StringEntity params = new StringEntity(result);
