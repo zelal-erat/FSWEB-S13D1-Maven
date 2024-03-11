@@ -71,7 +71,7 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
         System.out.println("HERE");
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
         try {
-            HttpPost request = new HttpPost("http://localhost:5001/nextgen/taskLog/saveJavaTasks");
+            HttpPost request = new HttpPost("https://coursey-gpt-backend.herokuapp.com/nextgen/taskLog/saveJavaTasks");
             StringEntity params = new StringEntity(result);
             request.addHeader("content-type", "application/json");
             request.setEntity(params);
