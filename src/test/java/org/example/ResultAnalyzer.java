@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 
 public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
     private List<TestResultStatus> testResultsStatus = new ArrayList<>();
+    private static final String taskId = "138";
 
     private enum TestResultStatus {
         SUCCESSFUL, ABORTED, FAILED, DISABLED;
@@ -57,7 +58,6 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
         long failure = summary.get(TestResultStatus.FAILED) != null ? summary.get(TestResultStatus.FAILED) : 0;
 
         long score = success / (success + failure);
-        String taskId = "1";
         String userId = "999999";
 
         JSONObject json = new JSONObject();
